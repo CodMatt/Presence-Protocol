@@ -3,7 +3,8 @@ import './Dashboard.css';
 import EventsAttendingListComponent from './EventsAttendingList';
 import AllEventsListComponent from './AllEventsList';
 
-function DashboardComponent() {
+
+function DashboardComponent({ userWallet, orgWallet }) {
   return (
     <div className="dashboard">
       <h1>Presence Protocol</h1>

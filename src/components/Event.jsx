@@ -1,6 +1,7 @@
 import React from 'react';
+import AttendAndStake from './AttendAndStake';
 
-function Event({ title, description, time, attending }) {
+function Event({ title, description, time, attending ,userWallet, orgWallet, stakeAmount}) {
   return (
     <div className="event-card">
       <h2>{title}</h2>
@@ -8,7 +9,7 @@ function Event({ title, description, time, attending }) {
       <p>Time: {time}</p>
       {attending ? 
         <button>Check In</button> : 
-        <button>Attend and Stake</button>
+        <AttendAndStake userWallet={userWallet}  orgWallet={orgWallet} stakeAmount={30}></AttendAndStake>
       }
     </div>
   );
