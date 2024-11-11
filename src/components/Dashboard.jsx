@@ -6,15 +6,13 @@ import AllEventsListComponent from './AllEventsList';
 function DashboardComponent() {
   return (
     <div className="dashboard">
-      <h1>Welcome</h1>
-      <div className="instruction-box">
-        <p>Here is some instruction text to follow</p>
-      </div>
-      <button>Click Me</button>
+      <h1>Presence Protocol</h1>
+      <h1>Your Events</h1>  
       <EventsAttendingListComponent></EventsAttendingListComponent>
+      <h1>All Events</h1>
       <AllEventsListComponent></AllEventsListComponent>
     </div>
   );
-}
+} 
 
 export default DashboardComponent;
