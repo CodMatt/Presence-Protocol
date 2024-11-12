@@ -13,7 +13,7 @@ Blockchain and Backend: xrpl.js and Node.js
 I ran into some minor challenges while using React as it was my first time. But the biggest challenge I ran into was using the XRPL Blockchain as while I understood it was a consumer, it was totally different when I was trying to use it. I ran into some errors but the program manager, emma was kind enough to guide me through how to troubleshoot and even provide some advice on how to build my app. 
 
 #5. What I Learned
-Through developing Presence Protocol, I gained valuable insights into the complexities of blockchain integration. Working with the XRP Ledger taught me the intricacies of blockchain transactions, from handling asynchronous processes in xrpl.js to managing conditional escrow for staking and unstaking.
+Through developing Presence Protocol, I gained valuable insights into the complexities of blockchain integration. Working with the XRP Ledger taught me the intricacies of blockchain transactions, from handling asynchronous processes in xrpl.js to managing conditional escrow for staking and unstaking. I learnt how to use react, got a chance to try to use pinata and ipfs and I look forward to learning how to use it better.
 
 #6. What's Next  
 1. Creating actual accounts instead of hard coding it
