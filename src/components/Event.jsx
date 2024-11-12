@@ -9,7 +9,7 @@ function Event({ title, description, time, attending ,userWallet, orgWallet, sta
       <p>Time: {time}</p>
       {attending ? 
         <button>Check In</button> : 
-        <AttendAndStake userWallet={userWallet}  orgWallet={orgWallet} stakeAmount={30}></AttendAndStake>
+        <AttendAndStake userWallet={userWallet}  orgWallet={orgWallet} stakeAmount={3}></AttendAndStake>
       }
     </div>
   );

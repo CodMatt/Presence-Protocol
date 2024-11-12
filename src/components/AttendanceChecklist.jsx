@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Client, Wallet, xrpToDrops, isoTimeToRippleTime } from 'xrpl'
 
-function AttendanceChecklist() {
+function AttendanceChecklist({ userWallet, orgWallet, sequence }) {
    // Sample list of names
-   const namesList = ["Chad Coinson", "Brody Blockwell", "Tyler Satoshi", "Max HODLman", "Jax Etheridge", "Vinny Chainz", "Skyler Miner", "Dex Bullman", "Blaze Nakamoto", "Neo Moon"];
+   const namesList = ["Chad Coinson"];
    
    // State to track checked names
    const [attendance, setAttendance] = useState(
@@ -19,6 +20,35 @@ function AttendanceChecklist() {
 
    // Handler for verifying attendance
    const handleVerifyAttendance = () => {
+      console.log("userWallet: ", userWallet); 
+      console.log("orgWallet: ", orgWallet)
+      const returnStake = async () => {
+      try {
+      const client = new Client("wss://s.altnet.rippletest.net:51233");
+      await client.connect();
+
+
+      const escrowFinishTx = {
+         TransactionType: "EscrowFinish",
+         Account: orgWallet.classicAddress,            // The address finishing the escrow
+         OfferSequence: sequence, 
+      };
+
+      const prepared = await client.autofill(escrowFinishTx);
+      const signedTransaction = orgWallet.sign(prepared);
+      console.log("signedTransaction; ", signedTransaction)
+      //const result = await client.submitAndWait(signedTransaction.tx_blob);
+      const { result } = await client.submitAndWait(signedTransaction.tx_blob);
+
+      console.log('Escrow finished successfully:', result);
+      alert('Escrow finished successfully.');
+      await client.disconnect();
+    } catch (error) {
+      console.error('Failed to finish escrow:', error);
+      alert('Failed to finish escrow:');
+    }
+  };
+
       const presentNames = Object.keys(attendance).filter(name => attendance[name]);
       alert(`Attendance verified for: ${presentNames.join(", ") || "No one"}`);
    };
