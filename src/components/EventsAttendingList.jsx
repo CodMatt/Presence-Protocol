@@ -1,7 +1,7 @@
 import React from 'react';
 import Event from './Event';
 
-function EventsAttendingListComponent() {
+function EventsAttendingListComponent({ userWallet, orgWallet}) {
   const events = [
     {
       id: 1,
@@ -29,7 +29,7 @@ function EventsAttendingListComponent() {
   return (
     <div>
       {events.map(event => (
-        <Event key={event.id} title={event.title} description={event.description} time={event.time} attending={event.attending} />
+        <Event key={event.id} title={event.title} description={event.description} time={event.time} attending={event.attending} userWallet={userWallet}  orgWallet={orgWallet} />
       ))}
     </div>
   );

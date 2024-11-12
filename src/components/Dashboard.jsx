@@ -9,9 +9,9 @@ function DashboardComponent({ userWallet, orgWallet }) {
     <div className="dashboard">
       <h1>Presence Protocol</h1>
       <h1>Your Events</h1>  
-      <EventsAttendingListComponent></EventsAttendingListComponent>
+      <EventsAttendingListComponent userWallet={userWallet} orgWallet={orgWallet}></EventsAttendingListComponent>
       <h1>All Events</h1>
-      <AllEventsListComponent></AllEventsListComponent>
+      <AllEventsListComponent userWallet={userWallet} orgWallet={orgWallet}></AllEventsListComponent>
     </div>
   );
 } 
